@@ -14,6 +14,15 @@ contract Place {
         address payable owner;
     }
 
+    // A struct for user stats
+    struct Stats {
+        uint256 numPixelsPlaced;
+    }
+
+    // User statistics mapping
+    mapping (address => Stats) public stats;
+    // @dev: update individual attributes in struct with stats[address].attribute
+
     // Constructor
     constructor(uint256 _width, uint256 _height, uint256 _num_colors) {
         width = _width;
