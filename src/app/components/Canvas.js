@@ -11,19 +11,24 @@ export default function Canvas(props) {
     return "rgb(" + r + "," + g + "," + b + ")";
   }
 
-  useEffect(() => {
+  function fillCanvas() {
     let canvas = canvasRef.current;
     canvas.style.width = "50px";
     canvas.style.height = "50px";
     let ctx = canvas.getContext("2d");
     ctx.fillStyle = getRndColor();
     ctx.fillRect(0, 0, 300, 300);
+  }
+
+  useEffect(() => {
+    fillCanvas();
   }, []);
 
   return (
     <canvas
       onClick={() => {
         console.log(index);
+        fillCanvas();
       }}
       ref={canvasRef}
       {...props}
