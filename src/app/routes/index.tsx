@@ -1,7 +1,5 @@
-import bgimg from "../../assets/images/rplace.png";
-import { useRef } from "react";
 import Canvas from "../components/Canvas";
-import "./index.styles.css";
+import "../styles/index.styles.css";
 
 export default function Index() {
   var rows = [];
